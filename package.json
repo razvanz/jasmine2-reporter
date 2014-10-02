@@ -1,0 +1,34 @@
+{
+  "name": "jasmine2-reporter",
+  "version": "0.1.0",
+  "description": "Jasmine 2.0 console reporter.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/razvanz/jasmine2-reporter.git"
+  },
+  "keywords": [
+    "jasmine",
+    "reporter",
+    "jasmine2",
+    "jasmine-reporter",
+    "terminal-reporter",
+    "console-reporter"
+  ],
+  "author": {
+    "name": "Razvan Laurus",
+    "email": "razvan.laurus@gmail.com",
+    "url": "https://github.com/razvanz"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/razvanz/jasmine2-reporter/issues"
+  },
+  "homepage": "https://github.com/razvanz/jasmine2-reporter",
+  "dependencies": {
+    "colors": "^1.0.1"
+  }
+}
