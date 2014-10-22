@@ -101,7 +101,9 @@
         .strikethrough;
     },
     formatProcentage: function (unit, total) {
-      return ' ' + (parseInt(unit * 10000 / total) / 100) + '% ';
+      if(total !== 0){
+        return ' ' + (parseInt(unit * 10000 / total) / 100) + '% ';
+      } else return '0 %';
     }
   };
 
