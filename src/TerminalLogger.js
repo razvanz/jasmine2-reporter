@@ -7,6 +7,7 @@
       failedAsserts: true,
       failedSpec: true,
       failuresSummary: true,
+      hideEmptySummary: false,
       inColors: true,
       indent: '\t',
       namesInColors: false,
@@ -55,6 +56,8 @@
     opts.suiteDuration = 'suiteDuration' in opts ?
       opts.suiteDuration : DEFAULTS.suiteDuration;
     opts.summary = 'summary' in opts ? opts.summary : DEFAULTS.summary;
+    opts.hideEmptySummary = 'hideEmptySummary' in opts ? opts.hideEmptySummary :
+      DEFAULTS.hideEmptySummary;
     opts.inColors = 'inColors' in opts ? opts.inColors : DEFAULTS.inColors;
     opts.namesInColors = 'namesInColors' in opts ?
       opts.namesInColors : DEFAULTS.namesInColors;
@@ -166,9 +169,12 @@
       this.print(execution.italic);
       this.newLine();
       this.increaseIndent();
-      this.print(passed.passed);
-      this.print(failed.failed);
-      this.print(pending.pending);
+      if (calc.passedSpecs > 0 || !this.options.hideEmptySummary)
+        this.print(passed.passed);
+      if (calc.failedSpecs > 0 || !this.options.hideEmptySummary)
+        this.print(failed.failed);
+      if (calc.pendingSpecs > 0 || !this.options.hideEmptySummary)
+        this.print(pending.pending);
       this.decreaseIndent();
       this.newLine();
     },
