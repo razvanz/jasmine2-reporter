@@ -66,6 +66,11 @@ Options
 Changelog
 ---------
 
+-	**v0.1.1**
+	-	Fix [#1](https://github.com/razvanz/jasmine2-reporter/issues/1) - documentation
+	-	Fix [#4](https://github.com/razvanz/jasmine2-reporter/issues/4) - NaN on summary
+	-	Fix [#5](https://github.com/razvanz/jasmine2-reporter/issues/5) - error on undefined stack
+	-	Fix [#6](https://github.com/razvanz/jasmine2-reporter/issues/6) - added `hideEmptySummary` option
 -	**v0.1.0** (initial functionality)
 	-	terminal reported compatible with `Jasmine 2.0`
 
