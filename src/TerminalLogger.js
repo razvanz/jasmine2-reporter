@@ -125,7 +125,7 @@
       for (var i = 0; i < assertions.length; i++) {
         if (!assertions[i].passed) {
           this.print('- '.failed + assertions[i].message.failed);
-          if (this.options.stacktrace && isSummary) {
+          if (this.options.stacktrace && isSummary && assertions[i].stack) {
             this.print(this.filterStackTraces(assertions[i].stack)
               .failed);
           }
