@@ -12,6 +12,7 @@
       indent: '\t',
       namesInColors: false,
       passedSpec: true,
+      disabledSpec: true,
       pendingSpec: true,
       pendingSuite: true,
       specDuration: true,
@@ -29,6 +30,7 @@
         failed: '✗  '.strikethrough,
         passed: '✓  '.strikethrough,
         pending: '~  '.strikethrough,
+        disabled: '#  '.strikethrough,
         suite: '» '.strikethrough
       }
     };
@@ -45,6 +47,8 @@
       opts.failuresSummary : DEFAULTS.failuresSummary;
     opts.passedSpec = 'passedSpec' in opts ?
       opts.passedSpec : DEFAULTS.passedSpec;
+    opts.disabledSpec = 'disabledSpec' in opts ?
+      opts.disabledSpec : DEFAULTS.disabledSpec;
     opts.pendingSpec = 'pendingSpec' in opts ?
       opts.pendingSpec : DEFAULTS.pendingSpec;
     opts.pendingSuite = 'pendingSuite' in opts ?
@@ -69,6 +73,8 @@
         opts.symbols.failed.strikethrough : DEFAULTS.symbols.failed,
       pending: opts.symbols && opts.symbols.pending !== undefined ?
         opts.symbols.pending.strikethrough : DEFAULTS.symbols.pending,
+      disabled: opts.symbols && opts.symbols.disabled !== undefined ?
+        opts.symbols.disabled.strikethrough : DEFAULTS.symbols.disabled,
       suite: opts.symbols && opts.symbols.suite !== undefined ?
         opts.symbols.suite.strikethrough : DEFAULTS.symbols.suite
     };
@@ -80,6 +86,8 @@
         opts.colors.failed : DEFAULTS.colors.failed,
       pending: opts.colors && opts.colors.pending ?
         opts.colors.pending : DEFAULTS.colors.pending,
+      disabled: opts.colors && opts.colors.disabled ?
+        opts.colors.disabled : DEFAULTS.colors.system,
       suite: opts.colors && opts.colors.suite ?
         opts.colors.suite : DEFAULTS.colors.suite,
       system: opts.colors && opts.colors.system ?
@@ -239,6 +247,12 @@
       if (this.options.pendingSpec) {
         this.print(this.options.symbols.pending.pending +
           this.getSpecName(spec, 'pending'));
+      }
+    },
+    disabled: function (spec) {
+      if (this.options.disabledSpec) {
+        this.print(this.options.symbols.disabled.disabled +
+          this.getSpecName(spec, 'system'));
       }
     },
     getSuiteName: function (suite, color) {
