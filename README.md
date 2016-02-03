@@ -59,6 +59,7 @@ Options
 	-	`failed: '✗  '.strikethrough` - failed spec symbol;
 	-	`passed: '✓  '.strikethrough` - passed spec symbol;
 	-	`pending: '~  '.strikethrough` - pending(skipped) spec symbol;
+	-	`disabled: '#  '.strikethrough` - disabled spec symbol;
 	-	`suite: '» '.strikethrough` - suite symbol;
 
 *Note:* By default the symbols are emphasized with strikethrough wich is a [colors](https://www.npmjs.org/package/colors) module feature. The dependancy is used for displaying the colored output, so for more options check their [documentation](https://github.com/Marak/colors.js/blob/master/ReadMe.md).
