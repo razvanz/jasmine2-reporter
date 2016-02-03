@@ -12,7 +12,7 @@ In most cases if a reference to the `jasmine` object is defined, the reporter ca
 jasmine.getEnv().addReporter(reporter);
 ```
 
-#### NodeJS (`minijasminenode2`)
+#### NodeJS (`minijasminenode2`\)
 
 This example is based on [minijasminenode2](https://github.com/juliemr/minijasminenode/tree/jasmine2) library. The reporter can be used with other Jasmine plugins. Check the appropriate documentation for usage details.
 
@@ -67,6 +67,8 @@ Options
 Changelog
 ---------
 
+-	**v0.1.2**
+	-	Fix [#11](https://github.com/razvanz/jasmine2-reporter/pull/11) - Avoid reported crashing on `disabled` specs
 -	**v0.1.1**
 	-	Fix [#1](https://github.com/razvanz/jasmine2-reporter/issues/1) - documentation
 	-	Fix [#4](https://github.com/razvanz/jasmine2-reporter/issues/4) - NaN on summary
