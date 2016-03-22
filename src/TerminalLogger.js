@@ -11,6 +11,7 @@
       inColors: true,
       indent: '\t',
       namesInColors: false,
+      startedSpec: false,
       passedSpec: true,
       disabledSpec: true,
       pendingSpec: true,
@@ -31,7 +32,8 @@
         passed: '✓  '.strikethrough,
         pending: '~  '.strikethrough,
         disabled: '#  '.strikethrough,
-        suite: '» '.strikethrough
+        suite: '» '.strikethrough,
+        test: '▻  '.strikethrough
       }
     };
 
@@ -65,6 +67,8 @@
     opts.inColors = 'inColors' in opts ? opts.inColors : DEFAULTS.inColors;
     opts.namesInColors = 'namesInColors' in opts ?
       opts.namesInColors : DEFAULTS.namesInColors;
+    opts.startedSpec = 'startedSpec' in opts ?
+        opts.startedSpec : DEFAULTS.startedSpec;
 
     opts.symbols = {
       passed: opts.symbols && opts.symbols.passed !== undefined ?
@@ -76,7 +80,9 @@
       disabled: opts.symbols && opts.symbols.disabled !== undefined ?
         opts.symbols.disabled.strikethrough : DEFAULTS.symbols.disabled,
       suite: opts.symbols && opts.symbols.suite !== undefined ?
-        opts.symbols.suite.strikethrough : DEFAULTS.symbols.suite
+        opts.symbols.suite.strikethrough : DEFAULTS.symbols.suite,
+      test: opts.symbols && opts.symbols.test !== undefined ?
+          opts.symbols.test.strikethrough : DEFAULTS.symbols.test
     };
 
     colors.setTheme({
@@ -90,6 +96,8 @@
         opts.colors.disabled : DEFAULTS.colors.system,
       suite: opts.colors && opts.colors.suite ?
         opts.colors.suite : DEFAULTS.colors.suite,
+      test: opts.colors && opts.colors.system ?
+          opts.colors.system : DEFAULTS.colors.system,
       system: opts.colors && opts.colors.system ?
         opts.colors.system : DEFAULTS.colors.system
     });
@@ -217,8 +225,11 @@
       this.decreaseIndent();
       this.newLine();
     },
-    startSpec: function () {
+    startSpec: function (spec, calc) {
       this.increaseIndent();
+      if (this.options.startedSpec) {
+        this.print(this.options.symbols.test.test + this.getSpecName(spec))
+      }
     },
     stopSpec: function (spec, calc) {
       this[spec.status](spec, calc);
