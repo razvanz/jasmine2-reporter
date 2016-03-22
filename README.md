@@ -42,6 +42,7 @@ Options
 -	`inColors: true` - use colors to display the reports;
 -	`indent: '\t'` - the indentation character/string;
 -	`namesInColors: false` - display suite and specs names in colors;
+-	`startedSpec: false` - display started specs;
 -	`passedSpec: true` - display passed specs;
 -	`pendingSpec: true` - display pending/skipped specs (`xit`, `pending()`);
 -	`pendingSuite: true` - display pending/skipped suites (`xdescribe`);
