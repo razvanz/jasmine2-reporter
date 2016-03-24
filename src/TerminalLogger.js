@@ -11,7 +11,7 @@
       inColors: true,
       indent: '\t',
       namesInColors: false,
-      startedSpec: false,
+      startingSpec: false,
       passedSpec: true,
       disabledSpec: true,
       pendingSpec: true,
@@ -33,7 +33,7 @@
         pending: '~  '.strikethrough,
         disabled: '#  '.strikethrough,
         suite: '» '.strikethrough,
-        test: '▻  '.strikethrough
+        starting: '▻  '.strikethrough
       }
     };
 
@@ -67,8 +67,8 @@
     opts.inColors = 'inColors' in opts ? opts.inColors : DEFAULTS.inColors;
     opts.namesInColors = 'namesInColors' in opts ?
       opts.namesInColors : DEFAULTS.namesInColors;
-    opts.startedSpec = 'startedSpec' in opts ?
-        opts.startedSpec : DEFAULTS.startedSpec;
+    opts.startingSpec = 'startingSpec' in opts ?
+        opts.startingSpec : DEFAULTS.startingSpec;
 
     opts.symbols = {
       passed: opts.symbols && opts.symbols.passed !== undefined ?
@@ -81,8 +81,8 @@
         opts.symbols.disabled.strikethrough : DEFAULTS.symbols.disabled,
       suite: opts.symbols && opts.symbols.suite !== undefined ?
         opts.symbols.suite.strikethrough : DEFAULTS.symbols.suite,
-      test: opts.symbols && opts.symbols.test !== undefined ?
-          opts.symbols.test.strikethrough : DEFAULTS.symbols.test
+      starting: opts.symbols && opts.symbols.starting !== undefined ?
+          opts.symbols.starting.strikethrough : DEFAULTS.symbols.starting
     };
 
     colors.setTheme({
@@ -96,7 +96,7 @@
         opts.colors.disabled : DEFAULTS.colors.system,
       suite: opts.colors && opts.colors.suite ?
         opts.colors.suite : DEFAULTS.colors.suite,
-      test: opts.colors && opts.colors.system ?
+      starting: opts.colors && opts.colors.system ?
           opts.colors.system : DEFAULTS.colors.system,
       system: opts.colors && opts.colors.system ?
         opts.colors.system : DEFAULTS.colors.system
@@ -227,8 +227,8 @@
     },
     startSpec: function (spec, calc) {
       this.increaseIndent();
-      if (this.options.startedSpec) {
-        this.print(this.options.symbols.test.test + this.getSpecName(spec))
+      if (this.options.startingSpec) {
+        this.print(this.options.symbols.starting.starting + this.getSpecName(spec))
       }
     },
     stopSpec: function (spec, calc) {
