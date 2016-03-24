@@ -42,7 +42,7 @@ Options
 -	`inColors: true` - use colors to display the reports;
 -	`indent: '\t'` - the indentation character/string;
 -	`namesInColors: false` - display suite and specs names in colors;
--	`startedSpec: false` - display started specs;
+-	`startingSpec: false` - display started specs;
 -	`passedSpec: true` - display passed specs;
 -	`pendingSpec: true` - display pending/skipped specs (`xit`, `pending()`);
 -	`pendingSuite: true` - display pending/skipped suites (`xdescribe`);
@@ -51,12 +51,14 @@ Options
 -	`suiteDuration: false` - display duration for each suite;
 -	`summary: true` - display a summary with passed/failed/pending percentages, after all the test have runned;
 -	`colors`
+	-	`starting: 'grey'` - color used to display started tests;
 	-	`failed: 'red'` - color used to display failed tests;
 	-	`passed: 'green'` - color used to display passed tests;
 	-	`pending: 'yellow'` - color used to display pending(skipped) tests;
 	-	`suite: 'cyan'` - color used to display suite symbol/name;
 	-	`system: 'grey'` - color used to display system information (duration, summary, ...);
 -	`symbols`
+	-	`starting: '▻  '.strikethrough` - spec started symbol;
 	-	`failed: '✗  '.strikethrough` - failed spec symbol;
 	-	`passed: '✓  '.strikethrough` - passed spec symbol;
 	-	`pending: '~  '.strikethrough` - pending(skipped) spec symbol;
