@@ -70,6 +70,8 @@ Options
 Changelog
 ---------
 
+-	**v0.2.0**
+	-	Feat [#12](https://github.com/razvanz/jasmine2-reporter/pull/12) - Add `startingSpec` options which toggles logging of starting specs
 -	**v0.1.2**
 	-	Fix [#11](https://github.com/razvanz/jasmine2-reporter/pull/11) - Avoid reported crashing on `disabled` specs
 -	**v0.1.1**
