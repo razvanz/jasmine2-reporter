@@ -228,7 +228,7 @@
     startSpec: function (spec, calc) {
       this.increaseIndent();
       if (this.options.startingSpec) {
-        this.print(this.options.symbols.starting.starting + this.getSpecName(spec))
+        this.print(this.options.symbols.starting.starting + this.getSpecName(spec));
       }
     },
     stopSpec: function (spec, calc) {
