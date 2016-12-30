@@ -28,12 +28,12 @@
         system:         'grey'
       },
       symbols: {
-        failed: '✗  '.strikethrough,
-        passed: '✓  '.strikethrough,
-        pending: '~  '.strikethrough,
-        disabled: '#  '.strikethrough,
-        suite: '» '.strikethrough,
-        starting: '▻  '.strikethrough
+        failed:         colors.strikethrough('✗  '),
+        passed:         colors.strikethrough('✓  '),
+        pending:        colors.strikethrough('~  '),
+        disabled:       colors.strikethrough('#  '),
+        suite:          colors.strikethrough('»  '),
+        starting:       colors.strikethrough('▻  ')
       }
     };
 
@@ -72,17 +72,17 @@
 
     opts.symbols = {
       passed: opts.symbols && opts.symbols.passed !== undefined ?
-        opts.symbols.passed.strikethrough : DEFAULTS.symbols.passed,
+        colors.strikethrough(opts.symbols.passed) : DEFAULTS.symbols.passed,
       failed: opts.symbols && opts.symbols.failed !== undefined ?
-        opts.symbols.failed.strikethrough : DEFAULTS.symbols.failed,
+        colors.strikethrough(opts.symbols.failed) : DEFAULTS.symbols.failed,
       pending: opts.symbols && opts.symbols.pending !== undefined ?
-        opts.symbols.pending.strikethrough : DEFAULTS.symbols.pending,
+        colors.strikethrough(opts.symbols.pending) : DEFAULTS.symbols.pending,
       disabled: opts.symbols && opts.symbols.disabled !== undefined ?
-        opts.symbols.disabled.strikethrough : DEFAULTS.symbols.disabled,
+        colors.strikethrough(opts.symbols.disabled) : DEFAULTS.symbols.disabled,
       suite: opts.symbols && opts.symbols.suite !== undefined ?
-        opts.symbols.suite.strikethrough : DEFAULTS.symbols.suite,
+        colors.strikethrough(opts.symbols.suite) : DEFAULTS.symbols.suite,
       starting: opts.symbols && opts.symbols.starting !== undefined ?
-          opts.symbols.starting.strikethrough : DEFAULTS.symbols.starting
+        colors.strikethrough(opts.symbols.starting) : DEFAULTS.symbols.starting
     };
 
     colors.setTheme({
@@ -114,7 +114,7 @@
 
   TerminalLogger.prototype = {
     start: function () {
-      this.print('\n JASMINE STARTING: \n'.bold.inverse);
+      this.print(colors.bold.inverse('\n JASMINE STARTING: \n'));
     },
     stop: function (errors, calc) {
       if (this.options.summary) this.summary(calc);
@@ -125,7 +125,7 @@
       this.resetIndent();
       this.newLine(true);
       this.print('**************************************************');
-      this.print('*                   ' + ' Failures '.bold.inverse +
+      this.print('*                   ' + colors.bold.inverse(' Failures ') +
         '                   *');
       this.print('**************************************************');
       this.newLine();
@@ -135,7 +135,7 @@
       }
     },
     failedSummary: function (spec, index) {
-      this.print(index + ') ' + spec.fullName.bold);
+      this.print(index + ') ' + colors.bold(spec.fullName));
       this.displayErrorMessages(spec, true);
     },
     displayErrorMessages: function (spec, isSummary) {
@@ -178,7 +178,7 @@
       this.resetIndent();
       this.newLine(true);
       this.print('**************************************************');
-      this.print('*                   ' + ' Summary '.bold.inverse +
+      this.print('*                   ' + colors.bold.inverse(' Summary ') +
         '                    *');
       this.print('**************************************************');
       this.newLine();
@@ -268,7 +268,7 @@
     },
     getSuiteName: function (suite, color) {
       return this.options.namesInColors ?
-        suite.description.bold[color] : suite.description.bold;
+        colors.bold[color](suite.description) : colors.bold(suite.description);
     },
     getSpecName: function (spec, color) {
       return this.options.namesInColors ?
