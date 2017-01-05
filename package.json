@@ -29,6 +29,6 @@
   },
   "homepage": "https://github.com/razvanz/jasmine2-reporter",
   "dependencies": {
-    "colors": "^1.0.1"
+    "colors": "^1.1.2"
   }
 }
