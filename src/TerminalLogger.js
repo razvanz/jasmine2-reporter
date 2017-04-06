@@ -28,8 +28,8 @@
         system:         'grey'
       },
       symbols: {
-        failed:         colors.strikethrough('✗  '),
-        passed:         colors.strikethrough('✓  '),
+        failed:         colors.strikethrough('X  '),
+        passed:         colors.strikethrough('√  '),
         pending:        colors.strikethrough('~  '),
         disabled:       colors.strikethrough('#  '),
         suite:          colors.strikethrough('»  '),
