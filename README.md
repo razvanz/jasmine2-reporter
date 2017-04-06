@@ -59,8 +59,8 @@ Options
 	-	`system: 'grey'` - color used to display system information (duration, summary, ...);
 -	`symbols`
 	-	`starting: '▻  '.strikethrough` - spec started symbol;
-	-	`failed: '✗  '.strikethrough` - failed spec symbol;
-	-	`passed: '✓  '.strikethrough` - passed spec symbol;
+	-	`failed: 'X  '.strikethrough` - failed spec symbol;
+	-	`passed: '√  '.strikethrough` - passed spec symbol;
 	-	`pending: '~  '.strikethrough` - pending(skipped) spec symbol;
 	-	`disabled: '#  '.strikethrough` - disabled spec symbol;
 	-	`suite: '» '.strikethrough` - suite symbol;
