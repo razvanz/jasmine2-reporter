@@ -1,6 +1,8 @@
 Jasmine 2.0 Terminal Reporter
 =============================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/razvanz/jasmine2-reporter.svg)](https://greenkeeper.io/)
+
 A cool, very customisable, terminal reporter for visualizing `Jasmine 2.0` test results.
 
 Usage
