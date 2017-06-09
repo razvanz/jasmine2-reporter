@@ -4,7 +4,8 @@
   "description": "Jasmine 2.0 console reporter.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "demo": "node demo/run.js"
   },
   "repository": {
     "type": "git",
@@ -30,5 +31,8 @@
   "homepage": "https://github.com/razvanz/jasmine2-reporter",
   "dependencies": {
     "colors": "^1.1.2"
+  },
+  "devDependencies": {
+    "minijasminenode2": "github:razvanz/minijasminenode#master"
   }
 }
