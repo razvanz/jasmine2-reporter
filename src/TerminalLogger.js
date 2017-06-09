@@ -8,7 +8,7 @@
       failedSpec:       true,
       failuresSummary:  true,
       hideEmptySummary: false,
-      inColors:         true,
+      inColors:         colors.supportsColor,
       indent:           '\t',
       namesInColors:    false,
       startingSpec:     false,

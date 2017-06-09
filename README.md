@@ -39,7 +39,7 @@ Options
 -	`failedSpec: true` - display failed specs;
 -	`failuresSummary: true` - display a summary with the failed specs;
 -	`hideEmptySummary: false` - hide passed/failed/pending in the summary if the corresponding tests number is 0;
--	`inColors: true` - use colors to display the reports;
+-	`inColors: colors.supportsColor` - use colors to display the reports. Turn on if supported;
 -	`indent: '\t'` - the indentation character/string;
 -	`namesInColors: false` - display suite and specs names in colors;
 -	`startingSpec: false` - display started specs;
