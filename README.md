@@ -70,6 +70,8 @@ Options
 Changelog
 ---------
 
+-	**v0.3.1**
+	-	Fix [#17](https://github.com/razvanz/jasmine2-reporter/pull/17) - use characters supported everywhere
 -	**v0.3.0**
 	-	Fix [#14](https://github.com/razvanz/jasmine2-reporter/pull/14) - update `colors` usage
 -	**v0.2.0**
