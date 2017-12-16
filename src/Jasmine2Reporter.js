@@ -2,7 +2,6 @@ const Calculator = require('./Calculator');
 const TerminalLogger = require('./TerminalLogger');
 
 class Jasmine2Reporter {
-
   constructor(options, cb) {
     this.started = false;
     this.finished = false;
@@ -12,13 +11,13 @@ class Jasmine2Reporter {
     this.jasmineCallback = cb;
   }
 
-  jasmineStarted (runner) {
+  jasmineStarted(runner) {
     this.started = true;
     this.calc.start(runner.totalSpecsDefined);
     this.logger.start(runner, this.calc);
   }
 
-  jasmineDone (summary) {
+  jasmineDone(summary) {
     this.calc.stop();
     this.logger.stop(this.calc);
     this.finished = true;
@@ -27,22 +26,22 @@ class Jasmine2Reporter {
     }
   }
 
-  suiteStarted (suite) {
+  suiteStarted(suite) {
     this.calc.startSuite(suite);
     this.logger.startSuite(suite, this.calc);
   }
 
-  suiteDone (suite) {
+  suiteDone(suite) {
     this.calc.stopSuite(suite);
     this.logger.stopSuite(suite, this.calc);
   }
 
-  specStarted (spec) {
+  specStarted(spec) {
     this.calc.startSpec(spec);
     this.logger.startSpec(spec);
   }
 
-  specDone (spec) {
+  specDone(spec) {
     this.calc.stopSpec(spec);
     this.logger.stopSpec(spec, this.calc);
   }

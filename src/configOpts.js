@@ -1,37 +1,37 @@
 const colors = require('colors');
 
 const DEFAULTS = Object.freeze({
-  failedAsserts:    true,
-  failedSpec:       true,
-  failuresSummary:  true,
+  failedAsserts: true,
+  failedSpec: true,
+  failuresSummary: true,
   hideEmptySummary: false,
-  inColors:         colors.supportsColor,
-  indent:           '\t',
-  namesInColors:    false,
-  startingSpec:     false,
-  passedSpec:       true,
-  disabledSpec:     true,
-  pendingSpec:      true,
-  pendingSuite:     true,
-  specDuration:     true,
-  stacktrace:       true,
-  suiteDuration:    false,
-  summary:          true,
+  inColors: colors.supportsColor,
+  indent: '\t',
+  namesInColors: false,
+  startingSpec: false,
+  passedSpec: true,
+  disabledSpec: true,
+  pendingSpec: true,
+  pendingSuite: true,
+  specDuration: true,
+  stacktrace: true,
+  suiteDuration: false,
+  summary: true,
   colors: {
-    failed:         'red',
-    passed:         'green',
-    pending:        'yellow',
-    suite:          'cyan',
-    system:         'grey'
+    failed: 'red',
+    passed: 'green',
+    pending: 'yellow',
+    suite: 'cyan',
+    system: 'grey',
   },
   symbols: {
-    failed:         colors.strikethrough('X  '),
-    passed:         colors.strikethrough('√  '),
-    pending:        colors.strikethrough('~  '),
-    disabled:       colors.strikethrough('#  '),
-    suite:          colors.strikethrough('»  '),
-    starting:       colors.strikethrough('▻  ')
-  }
+    failed: colors.strikethrough('X  '),
+    passed: colors.strikethrough('√  '),
+    pending: colors.strikethrough('~  '),
+    disabled: colors.strikethrough('#  '),
+    suite: colors.strikethrough('»  '),
+    starting: colors.strikethrough('▻  '),
+  },
 });
 
 function configOpts(options) {
@@ -66,7 +66,7 @@ function configOpts(options) {
     suite: options.symbols && options.symbols.suite !== undefined ?
       colors.strikethrough(options.symbols.suite) : DEFAULTS.symbols.suite,
     starting: options.symbols && options.symbols.starting !== undefined ?
-      colors.strikethrough(options.symbols.starting) : DEFAULTS.symbols.starting
+      colors.strikethrough(options.symbols.starting) : DEFAULTS.symbols.starting,
   };
 
   colors.setTheme({
@@ -83,7 +83,7 @@ function configOpts(options) {
     starting: options.colors && options.colors.system ?
       options.colors.system : DEFAULTS.colors.system,
     system: options.colors && options.colors.system ?
-      options.colors.system : DEFAULTS.colors.system
+      options.colors.system : DEFAULTS.colors.system,
   });
 
   return options;
