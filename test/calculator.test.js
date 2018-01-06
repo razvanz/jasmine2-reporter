@@ -67,4 +67,39 @@ describe('Tests for Calculator class', () => {
       expect(notZero).toEqual(expect.stringContaining(' 50% '));
     });
   });
+
+  describe('checks for countSpecs()', () => {
+    describe('checks the passed specs count ', () => {
+      const calculator = new Calculator();
+
+      beforeEach(() => {
+        calculator.countSpecs('passed');
+      });
+
+      test('validates the passed specs count is 1 ', () => {
+        expect(calculator.passedSpecs).toEqual(1);
+      });
+
+      test('validates the passed specs count increases by one', () => {
+        expect(calculator.passedSpecs).toEqual(2);
+      });
+
+    });
+
+    describe('checks the failed specs count ', () => {
+      const calculator = new Calculator();
+
+      beforeEach(() => {
+        calculator.countSpecs('failed');
+      });
+
+      test('validates the failed specs count is 1', () => {
+        expect(calculator.failedSpecs).toEqual(1);
+      });
+
+      test('validates the failed specs count increases by one', () => {
+        expect(calculator.failedSpecs).toEqual(2);
+      });
+    });
+  });
 });
