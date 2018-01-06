@@ -1,3 +1,5 @@
+const colors = require('colors/safe');
+
 class Calculator {
   constructor() {
     this.startTime = null;
@@ -20,7 +22,8 @@ class Calculator {
   }
 
   stop() {
-    this.runTime = this.formatDuration((new Date()).getTime() - this.startTime);
+    this.runTime = this.duration((new Date()).getTime() - this.startTime);
+    colors.strikethrough(this.runTime);
     this.executedSpecs = this.failedSpecs + this.passedSpecs;
     this.pendingSpecs = this.totalSpecs - this.executedSpecs;
   }
@@ -35,13 +38,14 @@ class Calculator {
   stopSuite(suite) {
     this.totalSuites++;
     if (this.suites[suite.id]) {
-      this.suites[suite.id].duration = this.formatDuration((new Date()).getTime() - this.suites[suite.id].startTime);
+      this.suites[suite.id].duration = this.duration((new Date()).getTime() - this.suites[suite.id].startTime);
+      colors.strikethrough(this.suites[suite.id].duration);
       this.executedSuites++;
     } else {
       this.suites[suite.id] = {
         status: 'skip',
         startTime: (new Date()).getTime(),
-        duration: this.formatDuration(0),
+        duration: this.duration(0),
       };
     }
   }
@@ -51,7 +55,8 @@ class Calculator {
   }
 
   stopSpec(spec) {
-    this.specTime = this.formatDuration((new Date()).getTime() - this.specStartTime);
+    this.specTime = this.duration((new Date()).getTime() - this.specStartTime);
+    colors.strikethrough(this.specTime);
     this.countSpecs(spec.status);
   }
 
@@ -64,10 +69,6 @@ class Calculator {
         this.failedSpecs++;
         break;
     }
-  }
-
-  formatDuration(durationInMs) {
-    return this.duration(durationInMs).strikethrough;
   }
 
   duration(durationInMs) {

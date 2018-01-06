@@ -102,4 +102,40 @@ describe('Tests for Calculator class', () => {
       });
     });
   });
+
+  describe('checks for stopSpec()', () => {
+    describe('checks with failed spec', () => {
+      const failedSpec = {
+        status: "failed"
+      };
+      const calculator = new Calculator();
+      const countSpecs = jest.spyOn(calculator, 'countSpecs');
+      calculator.stopSpec(failedSpec);
+
+      test('validates the specTime is not a null', () => {
+        expect(calculator.specTime).toEqual(expect.anything());
+      });
+
+      test('validates the countSpecs was called with failed argument', () => {
+        expect(countSpecs).toBeCalledWith('failed');
+      });
+    });
+
+    describe('checks with passed spec', () => {
+      const passedSpec = {
+        status: "passed"
+      };
+      const calculator = new Calculator();
+      const countSpecs = jest.spyOn(calculator, 'countSpecs');
+      calculator.stopSpec(passedSpec);
+
+      test('validates the specTime is not a null', () => {
+        expect(calculator.specTime).toEqual(expect.anything());
+      });
+
+      test('validates the countSpecs was called with passed argument', () => {
+        expect(countSpecs).toBeCalledWith('passed');
+      });
+    });
+  });
 });
