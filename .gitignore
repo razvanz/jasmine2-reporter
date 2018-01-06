@@ -22,3 +22,4 @@ node_modules
 # WebStorm project metadata stuff
 .idea/
 package-lock.json
+coverage/

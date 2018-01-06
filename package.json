@@ -4,7 +4,7 @@
   "description": "Jasmine 2.0 console reporter.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "demo": "node demo/run.js",
     "lint": "eslint ."
   },
@@ -34,9 +34,10 @@
     "colors": "^1.1.2"
   },
   "devDependencies": {
-    "minijasminenode2": "github:razvanz/minijasminenode#master",
     "eslint": "^4.13.1",
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0"
+    "eslint-plugin-import": "^2.8.0",
+    "jest": "^22.0.4",
+    "minijasminenode2": "github:razvanz/minijasminenode#master"
   }
 }

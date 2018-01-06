@@ -67,17 +67,21 @@ class Calculator {
   }
 
   formatDuration(durationInMs) {
-    let duration = '',
-      durationInSecs,
-      durationInMins,
-      durationInHrs;
+    return this.duration(durationInMs).strikethrough;
+  }
+
+  duration(durationInMs) {
+    let duration = '';
+    let durationInSecs;
+    let durationInMins;
+    let durationInHrs;
     durationInSecs = durationInMs / 1000;
     if (durationInSecs < 1) {
-      return (`${durationInSecs} s`).strikethrough;
+      return `${durationInSecs} s`;
     }
     durationInSecs = Math.round(durationInSecs);
     if (durationInSecs < 60) {
-      return (`${durationInSecs} s`).strikethrough;
+      return `${durationInSecs} s`;
     }
     durationInMins = Math.floor(durationInSecs / 60);
     durationInSecs %= 60;
@@ -85,14 +89,14 @@ class Calculator {
       duration = ` ${durationInSecs} s`;
     }
     if (durationInMins < 60) {
-      return (`${durationInMins} min${duration}`).strikethrough;
+      return `${durationInMins} min${duration}`;
     }
     durationInHrs = Math.floor(durationInMins / 60);
     durationInMins %= 60;
     if (durationInMins) {
       duration = ` ${durationInMins} min${duration}`;
     }
-    return (`${durationInHrs} hours${duration}`).strikethrough;
+    return `${durationInHrs} hours${duration}`;
   }
 
   formatPercentage(unit, total) {

@@ -11,7 +11,7 @@ const options = {
   },
 };
 
-miniJasmineLib.addSpecs('demo/specs.js');
+miniJasmineLib.addSpecs('specs.js');
 miniJasmineLib.addReporter(new Jasmine2Reporter(options));
 miniJasmineLib.executeSpecs({
   silent: true,
