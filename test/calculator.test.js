@@ -138,4 +138,13 @@ describe('Tests for Calculator class', () => {
       });
     });
   });
+
+  describe('checks for startSpec()', () => {
+    const calculator = new Calculator();
+    calculator.startSpec();
+
+    test('validates the specTime is not a null', () => {
+      expect(calculator.specStartTime).toEqual(expect.anything());
+    });
+  });
 });
