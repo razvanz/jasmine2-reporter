@@ -147,4 +147,18 @@ describe('Tests for Calculator class', () => {
       expect(calculator.specStartTime).toEqual(expect.anything());
     });
   });
+
+  describe('checks for start()', () => {
+    const specNo = 25;
+    const calculator = new Calculator();
+    calculator.start(specNo);
+
+    test('validates the startTime is not a null', () => {
+      expect(calculator.startTime).toEqual(expect.anything());
+    });
+
+    test('validates the totalSpecs is equal to specNo value', () => {
+      expect(calculator.totalSpecs).toEqual(specNo);
+    });
+  });
 });
