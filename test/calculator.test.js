@@ -161,4 +161,30 @@ describe('Tests for Calculator class', () => {
       expect(calculator.totalSpecs).toEqual(specNo);
     });
   });
+
+  describe('checks for stop()', () => {
+    const calculator = new Calculator();
+    calculator.failedSpecs = 2;
+    calculator.passedSpecs = 3;
+    calculator.totalSpecs = 6;
+    const duration = jest.spyOn(calculator, 'duration');
+    this.pendingSpecs = this.totalSpecs - this.executedSpecs;
+    calculator.stop();
+
+    test('validates the runTime is not a null', () => {
+      expect(calculator.runTime).toEqual(expect.anything());
+    });
+
+    test('validates the duration() was called once', () => {
+      expect(duration).toHaveBeenCalledTimes(1);
+    });
+
+    test('validates the executedSpecs equals sum of failed and passed specs', () => {
+      expect(calculator.executedSpecs).toEqual(5);
+    });
+
+    test('validates the pendingSpecs equals sum of failed and passed specs', () => {
+      expect(calculator.pendingSpecs).toEqual(1);
+    });
+  });
 });
