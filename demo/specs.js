@@ -1,36 +1,36 @@
-describe('demo suite', function() {
-  xit('spec skip', function() {});
+describe('demo suite', () => {
+  xit('spec skip', () => {});
 
-  it('spec success', function() {
+  it('spec success', () => {
     expect(true).toEqual(true);
   });
 
-  it('spec fail', function() {
+  it('spec fail', () => {
     expect(true).toEqual(false);
   });
 
-  xdescribe('skipped suite', function() {
-    xit('spec skip', function() {});
+  xdescribe('skipped suite', () => {
+    xit('spec skip', () => {});
 
-    it('spec success', function() {
+    it('spec success', () => {
       expect(true).toEqual(true);
     });
 
-    it('spec fail', function() {
+    it('spec fail', () => {
       expect(true).toEqual(false);
     });
   });
 
-  describe('inner suite', function() {
-    it('spec skip', function() {
-      pending()
+  describe('inner suite', () => {
+    it('spec skip', () => {
+      pending();
     });
 
-    it('spec success', function() {
+    it('spec success', () => {
       expect(true).toEqual(true);
     });
 
-    it('spec fail', function() {
+    it('spec fail', () => {
       expect(true).toEqual(false);
     });
   });

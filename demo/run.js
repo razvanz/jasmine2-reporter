@@ -1,17 +1,18 @@
-var miniJasmineLib = require('minijasminenode2'),
-  TestsReporter = require('../index').Jasmine2Reporter,
-  options = {
-    pendingSpec: true,
-    colors: {
-      pending: 'yellow',
-    },
-    symbols: {
-      pending: '*  '.strikethrough, //strikethrough is a colors module feature
-    }
-  };
+const Jasmine2Reporter = require('../src/Jasmine2Reporter');
+const miniJasmineLib = require('minijasminenode2');
 
-miniJasmineLib.addSpecs('demo/specs.js');
-miniJasmineLib.addReporter(new TestsReporter(options));
+const options = {
+  pendingSpec: true,
+  colors: {
+    pending: 'yellow',
+  },
+  symbols: {
+    pending: '*  '.strikethrough, // strikethrough is a colors module feature
+  },
+};
+
+miniJasmineLib.addSpecs('specs.js');
+miniJasmineLib.addReporter(new Jasmine2Reporter(options));
 miniJasmineLib.executeSpecs({
-  silent: true
-})
+  silent: true,
+});
