@@ -70,6 +70,10 @@ Options
 Changelog
 ---------
 
+-	**v1.0.0**
+	-	[#21](https://github.com/razvanz/jasmine2-reporter/pull/21) - refactor: update code to ES6
+	-	[#18](https://github.com/razvanz/jasmine2-reporter/pull/18) - add demo
+	-	[#16](https://github.com/razvanz/jasmine2-reporter/pull/16) - only use `colors` when supported
 -	**v0.3.1**
 	-	Fix [#17](https://github.com/razvanz/jasmine2-reporter/pull/17) - use characters supported everywhere
 -	**v0.3.0**
