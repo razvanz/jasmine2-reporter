@@ -70,6 +70,8 @@ Options
 Changelog
 ---------
 
+-	**v1.0.1**
+	-	[#23](https://github.com/razvanz/jasmine2-reporter/pull/23) - fix: exposing the module #23
 -	**v1.0.0**
 	-	[#21](https://github.com/razvanz/jasmine2-reporter/pull/21) - refactor: update code to ES6
 	-	[#18](https://github.com/razvanz/jasmine2-reporter/pull/18) - add demo
